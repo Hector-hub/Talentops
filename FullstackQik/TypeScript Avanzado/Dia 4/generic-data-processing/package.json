@@ -1,0 +1,21 @@
+{
+  "name": "generic-data-processing",
+  "version": "1.0.0",
+  "description": "Sistema completo de generic data processing con variance-aware design",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "tsc && node dist/app.js"
+  },
+  "keywords": [
+    "typescript",
+    "generics",
+    "variance",
+    "event-processing"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
