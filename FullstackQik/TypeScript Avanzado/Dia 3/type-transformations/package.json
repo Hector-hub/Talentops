@@ -1,0 +1,20 @@
+{
+  "name": "type-transformations",
+  "version": "1.0.0",
+  "description": "Sistema completo de type transformation para domain model complejo",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "tsc && node dist/app.js"
+  },
+  "keywords": [
+    "typescript",
+    "mapped-types",
+    "conditional-types"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
