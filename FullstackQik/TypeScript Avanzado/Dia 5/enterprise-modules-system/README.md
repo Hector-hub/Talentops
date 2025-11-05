@@ -1,4 +1,4 @@
-# Enterprise Modules System v2
+# Enterprise Modules System
 
 Un sistema completo de módulos enterprise usando TypeScript avanzado con arquitectura DDD/hexagonal.
 
