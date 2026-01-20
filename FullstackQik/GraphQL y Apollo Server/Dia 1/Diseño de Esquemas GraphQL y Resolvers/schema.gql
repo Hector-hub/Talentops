@@ -1,0 +1,65 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Usuario {
+  id: ID!
+  nombre: String!
+  email: String!
+}
+
+type Leccion {
+  id: ID!
+  titulo: String!
+  contenido: String!
+  duracionMinutos: Int!
+  orden: Int!
+}
+
+type EstadisticasCurso {
+  totalEstudiantes: Int!
+  calificacionPromedio: Float!
+  totalLecciones: Int!
+}
+
+type CursoCompleto {
+  id: ID!
+  titulo: String!
+  descripcion: String!
+  instructor: Usuario!
+  estudiantes: [Usuario!]!
+  lecciones: [Leccion!]!
+  estadisticas: EstadisticasCurso!
+}
+
+type InscripcionNotificacion {
+  curso: CursoCompleto!
+  estudiante: Usuario!
+  fecha: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+type Query {
+  cursos: [CursoCompleto!]!
+  curso(id: String!): CursoCompleto!
+}
+
+type Mutation {
+  crearCursoCompleto(datos: CrearCursoInput!): CursoCompleto!
+  inscribirEstudiante(cursoId: String!, estudianteId: String!): CursoCompleto!
+}
+
+input CrearCursoInput {
+  titulo: String!
+  descripcion: String!
+  instructorId: ID!
+  etiquetas: [String!]
+}
+
+type Subscription {
+  inscripcionACurso: InscripcionNotificacion!
+}
